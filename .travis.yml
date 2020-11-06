@@ -13,7 +13,7 @@ after_success:
     - docker build -t furkanh/multi-nginx ./nginx 
     - docker build -t furkanh/multi-server ./server 
     - docker build -t furkanh/multi-worker ./worker
-    - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     - docker push furkanh/multi-client
     - docker push furkanh/multi-nginx
     - docker push furkanh/multi-server
