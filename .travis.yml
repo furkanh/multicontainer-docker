@@ -1,4 +1,7 @@
 sudo: required
+
+language: generic
+
 services:
     - docker
 
@@ -13,7 +16,7 @@ after_success:
     - docker build -t furkanh/multi-nginx ./nginx 
     - docker build -t furkanh/multi-server ./server 
     - docker build -t furkanh/multi-worker ./worker
-    - echo "$DOCKER_PASSWORD" | docker login --username "furkanh" --password-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "furkanh" --password-stdin
     - docker push furkanh/multi-client
     - docker push furkanh/multi-nginx
     - docker push furkanh/multi-server
