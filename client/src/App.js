@@ -19,7 +19,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Fib App version KUBERNETES!
+            Fib App version KUBERNETES! v2
           </a>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
